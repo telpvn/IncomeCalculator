@@ -1,18 +1,18 @@
 import java.util.Scanner;
 
 public class Main {
-    private static int minIncome = 200000; // минимальный доход
-    private static int maxIncome = 900000; // максимальный доход
+    private static int minIncome = 200000;               // минимальный доход
+    private static int maxIncome = 900000;               // максимальный доход
 
-    private static int officeRentCharge = 140000; // аренда офиса
-    private static int telephonyCharge = 12000; // оплата за телефон
-    private static int internetAccessCharge = 7200; // оплата за интернет
+    private static int officeRentCharge = 140000;        // аренда офиса
+    private static int telephonyCharge = 12000;          // оплата за телефон
+    private static int internetAccessCharge = 7200;      // оплата за интернет
 
-    private static int assistantSalary = 45000; // зарплата помошнику
-    private static int financeManagerSalary = 90000; // зарплата бухгалтеру
+    private static int assistantSalary = 45000;          // зарплата помошнику
+    private static int financeManagerSalary = 90000;     // зарплата бухгалтеру
 
-    private static double mainTaxPercent = 0.24; // процент налогов
-    private static double managerPercent = 0.15; // процент менеджера
+    private static double mainTaxPercent = 0.24;         // процент налогов
+    private static double managerPercent = 0.15;         // процент менеджера
 
     private static double minInvestmentsAmount = 100000; // мин. сумма инвестиций
 
