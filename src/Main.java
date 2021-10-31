@@ -22,7 +22,7 @@ public class Main {
                 "(от 200 до 900 тысяч рублей): ");                          // значение диапазона дохода
             int income = (new Scanner(System.in)).nextInt(); // ввод в консоль суммы доходов
 
-            if (!checkIncomeRange(income)) {                    // если не верный диапазон доходов
+            if (!checkIncomeRange(income)) {                    // если не верный ввод диапазона дохода
                 continue;                                       // начать итерацию цикла сначала
             }
 
@@ -46,23 +46,24 @@ public class Main {
         }
     }
 
-    private static boolean checkIncomeRange(int income) {  // test branch
-        if (income < minIncome) {
-            System.out.println("Доход меньше нижней границы");
-            return false;
+    private static boolean checkIncomeRange(int income) {         // проверка ввода диапазона дохода
+        if (income < minIncome) {                                 // если ввели меньше минимального дохода
+            System.out.println("Доход меньше нижней границы");    // то вывести в консоль
+            return false;                                         // вернуть ложь
         }
-        if (income > maxIncome) {
-            System.out.println("Доход выше верхней границы");
-            return false;
+        if (income > maxIncome) {                                 // если ввели больше максимального дохода
+            System.out.println("Доход выше верхней границы");     // то вывести в консоль
+
+            return false;                                         // вернуть ложь
         }
-        return true;
+        return true;                                              // вернуть истину
     }
 
-    private static int calculateFixedCharges() {
-        return officeRentCharge +
-            telephonyCharge +
-            internetAccessCharge +
-            assistantSalary +
-            financeManagerSalary;
+    private static int calculateFixedCharges() {                  // фиксированные платежи
+        return officeRentCharge +                                 // вернуть аренда офиса +
+            telephonyCharge +                                     // оплата за телефон +
+            internetAccessCharge +                                // оплата за интернет +
+            assistantSalary +                                     // зарплата помошнику +
+            financeManagerSalary;                                 // зарплата бухгалтеру
     }
 }
