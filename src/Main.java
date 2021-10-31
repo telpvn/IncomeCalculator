@@ -46,7 +46,7 @@ public class Main {
         }
     }
 
-    private static boolean checkIncomeRange(int income) {  // test commit
+    private static boolean checkIncomeRange(int income) {  // test branch
         if (income < minIncome) {
             System.out.println("Доход меньше нижней границы");
             return false;
