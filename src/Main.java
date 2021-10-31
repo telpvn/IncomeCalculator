@@ -20,7 +20,7 @@ public class Main {
         while (true) {
             System.out.println("Введите сумму доходов компании за месяц " + // вывод в консоль
                 "(от 200 до 900 тысяч рублей): ");                          // значение диапазона дохода
-            int income = (new Scanner(System.in)).nextInt(); // ввод в консоль суммы доходов
+            int income = (new Scanner(System.in)).nextInt();                // ввод в консоль суммы доходов
 
             if (!checkIncomeRange(income)) {                    // если не верный ввод диапазона дохода
                 continue;                                       // начать итерацию цикла сначала
