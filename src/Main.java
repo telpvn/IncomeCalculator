@@ -17,6 +17,9 @@ public class Main {
     private static double minInvestmentsAmount = 100000; // мин. сумма инвестиций
 
     public static void main(String[] args) {
+        //расчёт минимальной суммы дохода для инвестирования
+        System.out.println("Минимальная сумма дохода для инвестирования: " + getMinIncomeForInvestment());
+
         while (true) {
             System.out.println("Введите сумму доходов компании за месяц " + // вывод в консоль
                 "(от 200 до 900 тысяч рублей): ");                          // значение диапазона дохода
@@ -32,8 +35,8 @@ public class Main {
             double taxAmount = mainTaxPercent * pureIncome; // сумма налогов = процент налогов
             double pureIncomeAfterTax = pureIncome - taxAmount; // чистый доход после уплаты налогов = чистый доход - сумма налогов
 
-            boolean canMakeInvestments = pureIncomeAfterTax >= // возможность инвестиции = чистый доход после уплаты налогов >= мин. сумма инвестиций
-                minInvestmentsAmount;
+            boolean canMakeInvestments = pureIncomeAfterTax >= // возможность инвестиции = чистый доход после уплаты налогов >=
+                minInvestmentsAmount;                          // мин. сумма инвестиций
 
             System.out.println("Зарплата менеджера: " + managerSalary); // вывод зарплаты менеджера
             System.out.println("Общая сумма налогов: " +                // вывод общей суммы налогов
@@ -43,6 +46,7 @@ public class Main {
             if (pureIncome < 0) {                                                   // если чистый доход < 0
                 System.out.println("Бюджет в минусе! Нужно срочно зарабатывать!");  // то вывод
             }
+
         }
     }
 
@@ -65,5 +69,9 @@ public class Main {
             internetAccessCharge +                                // оплата за интернет +
             assistantSalary +                                     // зарплата помошнику +
             financeManagerSalary;                                 // зарплата бухгалтеру
+    }
+
+    private static double getMinIncomeForInvestment() {
+        return (minInvestmentsAmount + calculateFixedCharges() * (1 - mainTaxPercent)) / ((1 - managerPercent) * (1 - mainTaxPercent));
     }
 }
